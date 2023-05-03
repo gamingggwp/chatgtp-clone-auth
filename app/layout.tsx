@@ -18,7 +18,6 @@ export default async function RootLayout({
 }) {
   const session = await getServerSession(authOptions)
   // console.log(session);
-  document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + 'px');
   return (
     <html lang="en">
       <body>

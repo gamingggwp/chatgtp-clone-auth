@@ -25,6 +25,11 @@ body {
     )
     rgb(var(--background-start-rgb));
 } */
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+}
 @layer components{
   .h-screen{
     height: 100vh;
