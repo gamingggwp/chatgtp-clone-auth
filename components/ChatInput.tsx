@@ -44,7 +44,7 @@ function ChatInput({ chatId }: Props) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                prompt: input + ' you', chatId, model, session,
+                prompt: input, chatId, model, session,
             }),
         }).then(() => {
             //Toast notification to say successful!
