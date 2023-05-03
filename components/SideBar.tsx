@@ -19,29 +19,28 @@ function SideBar() {
 
     // console.log(chats?.docs);
     return (
-        <div className="p-2 flex flex-col h-screen">
-            <div className="flex-1">
-                <div>
-                    {/* NewChat */}
-                    <NewChat />
-                    <div className="hidden md:inline">
-                        <ModelSelection />
-                    </div>
-                    <div className="flex-1 flex-col space-y-2 my-2 max-h-[calc(100vh-160px)] overflow-y-auto">
-                        {loading && (
-                            <div className="animate-pulse text-center text-white">
-                                <p>Loading Chats...</p>
-                            </div>
-                        )}
-                        {/* Map Through the ChatRows */}
-                        {chats?.docs.map((chat, index) => (
-                            <div>
-                                <ChatRow key={chat.id} id={chat.id} />
-                            </div>
-                        ))}
-                    </div>
-                    {/* {model && console.log("Sidebar: " + model)} */}
+        <div className="p-2 flex flex-col h-screen overflow-hidden">
+            {/* NewChat */}
+            <NewChat />
+            <div className="hidden md:inline">
+                <ModelSelection />
+            </div>
+
+            <div className="flex-1 overflow-y-auto overflow-x-hidden">
+                <div className="flex flex-col space-y-2 my-2 overflow-y-auto">
+                    {loading && (
+                        <div className="animate-pulse text-center text-white">
+                            <p>Loading Chats...</p>
+                        </div>
+                    )}
+                    {/* Map Through the ChatRows */}
+                    {chats?.docs.map((chat, index) => (
+                        <div>
+                            <ChatRow key={chat.id} id={chat.id} />
+                        </div>
+                    ))}
                 </div>
+                {/* {model && console.log("Sidebar: " + model)} */}
             </div>
             {session && (
                 <img
