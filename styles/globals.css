@@ -31,9 +31,8 @@ body {
   }
 }
 @layer components{
-  .h-screen{
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
+  .h-screen {
+    height: -webkit-fill-available;
   }
   .infoText{
     @apply p-4 bg-gray-700/50 rounded-lg max-w-[300px] text-[8px] md:text-lg

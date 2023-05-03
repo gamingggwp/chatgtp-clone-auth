@@ -27,7 +27,7 @@ function SideBar() {
                     <div className="hidden md:inline">
                         <ModelSelection />
                     </div>
-                    <div className="flex flex-col space-y-2 my-2">
+                    <div className="flex-1 flex-col space-y-2 my-2 max-h-[calc(100vh-160px)] overflow-y-auto">
                         {loading && (
                             <div className="animate-pulse text-center text-white">
                                 <p>Loading Chats...</p>
